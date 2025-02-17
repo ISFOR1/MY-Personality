@@ -488,7 +488,7 @@
                         </div>
                     </div>
 
-                    <!-- GFX Projects (Add your actual projects) -->
+                    <!-- GFX Projects -->
                     <div class="carousel-item">
                         <img src="https://cdn.discordapp.com/attachments/1072602266869178479/1272881337472126976/gfx_logo.png?ex=67b4709f&is=67b31f1f&hm=42c8c915f8dd96a3cc4b8a9700879142d63d32ad5724f3b519334d267c7e5df8&" alt="GFX OBBY" class="carousel-image">
                         <div class="carousel-content">
@@ -601,20 +601,17 @@
             const { itemWidth, maxPosition } = updateCarouselWidth();
             currentPosition += direction * itemWidth;
             
-            // Add bounds
             if (currentPosition > 0) currentPosition = 0;
             if (currentPosition < maxPosition) currentPosition = maxPosition;
             
             container.style.transform = `translateX(${currentPosition}px)`;
         }
 
-        // Handle window resize
         window.addEventListener('resize', () => {
             currentPosition = 0;
             container.style.transform = `translateX(0)`;
         });
 
-        // Smooth scroll for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
